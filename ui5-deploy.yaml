@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "3.1"
+metadata:
+  name: com.dine.mm.zmm0002
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          destination: DINE_DEV
+          url: https://my414214-api.s4hana.cloud.sap
+        app:
+          name: ZCBO_MM_0002
+          description: '[MM]수불부 업데이트'
+          package: ZCBO_MM_0002
+          transport: JBCK905120
+        exclude:
+          - /test/

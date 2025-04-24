@@ -1,0 +1,85 @@
+<mvc:View
+    controllerName="com.dine.mm.zmm0002.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:u="sap.ui.unified"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+        showHeader="false"
+    >
+        <VBox
+            width="90%"
+            class="VBwhiteColor"
+        >
+            <f:Form editable="true">
+                <f:layout>
+                    <f:ColumnLayout
+                        columnsM="3"
+                        columnsL="4"
+                        columnsXL="6"
+                    />
+                </f:layout>
+                <f:formContainers>
+                    <f:FormContainer>
+                        <f:formElements>
+                            <f:FormElement label="{i18n>Selecte_YearMounth}">
+                                <f:fields>
+                                    <DatePicker
+                                        id="idSeleteDate"
+                                        required="true"
+                                        displayFormat="yyyyMM"
+                                    />
+                                </f:fields>
+                            </f:FormElement>
+
+                            <f:FormElement label="{i18n>Plant}">
+                                <f:fields>
+                                    <MultiInput
+                                        id="idPlant"
+                                        required="true"
+                                        valueHelpRequest=".onVHPlant"
+                                    />
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="{i18n>VClass}">
+                                <f:fields>
+                                    <MultiInput
+                                        id="idVClass"
+                                        required="true"
+                                        valueHelpRequest=".onVHVClass"
+                                    />
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="{i18n>Product}">
+                                <f:fields>
+                                    <MultiInput
+                                        id="idProduct"
+                                        valueHelpRequest=".onVHProduct"
+                                    />
+                                </f:fields>
+                            </f:FormElement>
+                        </f:formElements>
+                    </f:FormContainer>
+                </f:formContainers>
+            </f:Form>
+
+            <VBox
+                class="sapUiSmallMarginBegin sapUiSmallMarginEnd VBwhiteColor"
+            >
+                <Button
+                    text="{i18n>Update}"
+                    type="Emphasized"
+                    press=".onUpdate"
+                />
+            </VBox>
+
+            <VBox height="2rem" />
+        </VBox>
+    </Page>
+</mvc:View>
