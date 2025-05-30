@@ -31,7 +31,9 @@ server:
         ignoreCertError: false # If set to true, certificate errors will be ignored. E.g. self-signed certificates will be accepted
         backend:
           - path: /sap
-            url: https://my414214-api.s4hana.cloud.sap
+            url: https://my424846-api.s4hana.cloud.sap
+            authenticationType: reentranceTicket
+            destination: SILLA_DEV
     - name: sap-fe-mockserver
       beforeMiddleware: csp
       configuration:
@@ -41,7 +43,13 @@ server:
             metadataPath: ./webapp/localService/metadata.xml
             mockdataPath: ./webapp/localService/data
             generateMockData: true
-        annotations: []
+          - urlPath: /sap/opu/odata/sap/ZUI_ASSB_0000_O2
+            metadataPath: ./webapp/localService/mainService/metadata.xml
+            mockdataPath: ./webapp/localService/mainService/data
+            generateMockData: true
+        annotations:
+          - localPath: ./webapp/localService/mainService/ZUI_ASSB_0000_O2_VAN.xml
+            urlPath: /sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZUI_ASSB_0000_O2_VAN',Version='0001')/$value/
     - name: fiori-tools-preview
       afterMiddleware: fiori-tools-appreload
       configuration:

@@ -18,8 +18,8 @@ server:
         backend:
           - authenticationType: reentranceTicket # SAML support for vscode
             path: /sap
-            url: https://my414214-api.s4hana.cloud.sap
-            destination: DINE_DEV
+            url: https://my424846-api.s4hana.cloud.sap
+            destination: SILLA_DEV
     - name: fiori-tools-appreload
       afterMiddleware: compression
       configuration:
@@ -30,4 +30,4 @@ server:
       afterMiddleware: fiori-tools-appreload
       configuration:
         component: com.dine.mm.zmm0002
-        ui5Theme: sap_horizon
+        ui5Theme: sap_evening_horizon

@@ -27,6 +27,26 @@
           }
         }
       }
+    },
+    "dataSources": {
+      "ZUI_ASSB_0000_O2_VAN": {
+        "uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZUI_ASSB_0000_O2_VAN',Version='0001')/$value/",
+        "type": "ODataAnnotation",
+        "settings": {
+          "localUri": "localService/mainService/ZUI_ASSB_0000_O2_VAN.xml"
+        }
+      },
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/ZUI_ASSB_0000_O2/",
+        "type": "OData",
+        "settings": {
+          "annotations": [
+            "ZUI_ASSB_0000_O2_VAN"
+          ],
+          "localUri": "localService/mainService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
     }
   },
   "sap.ui": {
@@ -71,6 +91,11 @@
         "settings": {
           "bundleName": "com.dine.mm.zmm0002.i18n.i18n"
         }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
       }
     },
     "resources": {

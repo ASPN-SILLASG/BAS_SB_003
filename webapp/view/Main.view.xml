@@ -14,8 +14,7 @@
         showHeader="false"
     >
         <VBox
-            width="90%"
-            class="VBwhiteColor"
+            width="100%"
         >
             <f:Form editable="true">
                 <f:layout>
@@ -69,17 +68,16 @@
                 </f:formContainers>
             </f:Form>
 
-            <VBox
-                class="sapUiSmallMarginBegin sapUiSmallMarginEnd VBwhiteColor"
+            <HBox
+                class="sapUiSmallMarginBegin sapUiSmallMarginEnd"
             >
                 <Button
                     text="{i18n>Update}"
                     type="Emphasized"
                     press=".onUpdate"
                 />
-            </VBox>
+            </HBox>
 
-            <VBox height="2rem" />
         </VBox>
     </Page>
 </mvc:View>

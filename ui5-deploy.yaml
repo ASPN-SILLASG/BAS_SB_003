@@ -14,12 +14,11 @@ builder:
       afterTask: generateCachebusterInfo
       configuration:
         target:
-          destination: DINE_DEV
-          url: https://my414214-api.s4hana.cloud.sap
+          destination: SILLA_DEV
+          url: https://my424846-api.s4hana.cloud.sap
         app:
-          name: ZCBO_MM_0002
-          description: '[MM]수불부 업데이트'
-          package: ZCBO_MM_0002
-          transport: JBCK905120
+          name: ZSB_0003
+          package: ZSB_0003
+          transport: TXYK900051
         exclude:
           - /test/

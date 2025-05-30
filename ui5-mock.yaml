@@ -17,7 +17,9 @@ server:
           url: https://ui5.sap.com
         backend:
           - path: /sap
-            url: https://my414214-api.s4hana.cloud.sap
+            url: https://my424846-api.s4hana.cloud.sap
+            authenticationType: reentranceTicket
+            destination: SILLA_DEV
     - name: fiori-tools-appreload
       afterMiddleware: compression
       configuration:
@@ -33,4 +35,10 @@ server:
             metadataPath: ./webapp/localService/metadata.xml
             mockdataPath: ./webapp/localService/data
             generateMockData: true
-        annotations: []
+          - urlPath: /sap/opu/odata/sap/ZUI_ASSB_0000_O2
+            metadataPath: ./webapp/localService/mainService/metadata.xml
+            mockdataPath: ./webapp/localService/mainService/data
+            generateMockData: true
+        annotations:
+          - localPath: ./webapp/localService/mainService/ZUI_ASSB_0000_O2_VAN.xml
+            urlPath: /sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZUI_ASSB_0000_O2_VAN',Version='0001')/$value/

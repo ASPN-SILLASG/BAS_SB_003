@@ -28,7 +28,7 @@ sap.ui.define([
 
 
                 //메인 Model
-                _oModelMain = new ODataModel("/sap/opu/odata/sap/ZMM_O2_0002", {
+                _oModelMain = new ODataModel("/sap/opu/odata/sap/ZUI_ASSB_0000_O2", {
                     defaultOperationMode: "Server"
                 });
                 this.getOwnerComponent().setModel(_oModelMain, "MainModel");
@@ -120,17 +120,17 @@ sap.ui.define([
             checkInputFileds:function() {
 
                 if (!this.getView().byId("idSeleteDate").getValue()) {
-                    MessageToast.show("년월을 입력해주세요")
+                    MessageToast.show("연월을 입력해주세요")
                     return false;
                 }
 
                 if (!this.getView().byId("idPlant").getValue()) {
-                    MessageToast.show("플래트를 입력해주세요")
+                    MessageToast.show("플랜트를 입력해주세요")
                     return false;
                 }
 
                 if (!this.getView().byId("idVClass").getValue()) {
-                    MessageToast.show("평가 클래스를 입력해주세요")
+                    MessageToast.show("평가클래스를 입력해주세요")
                     return false;
                 }
 
@@ -163,7 +163,7 @@ sap.ui.define([
                          },
                         success: function (odata, response) {
                             this.closeLoading();
-                            this._showMessage("수불 업데이트가 완료되였습니다.", function(){
+                            this._showMessage("수불 업데이트가 완료되었습니다", function(){
 
                             });
                      
@@ -172,7 +172,7 @@ sap.ui.define([
                             this.closeLoading();
                             try {
                                 var oResponseTextData = JSON.parse(oError.responseText);
-                                this._showConfirm("수불 업데이트가 실패되였습니다.",function(){
+                                this._showConfirm("수불 업데이트가 실패했습니다.",function(){
 
                                 });
                             } catch (e) {
